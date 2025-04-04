@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spelling Test Challenge!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .word-box {
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Spelling Test Challenge 🎉</h1>
+  <p>Type each word as you hear it in the video!</p>
+
+  <div class="word-box">
+    <p><strong>Word 1:</strong> (Insert your prompt or sentence for "accident" here)</p>
+    <input type="text" id="word-0" placeholder="Type the word you heard...">
+    <div id="result-0" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 2:</strong> (Insert your prompt or sentence for "accidentally" here)</p>
+    <input type="text" id="word-1" placeholder="Type the word you heard...">
+    <div id="result-1" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 3:</strong> (Insert your prompt or sentence for "actually" here)</p>
+    <input type="text" id="word-2" placeholder="Type the word you heard...">
+    <div id="result-2" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 4:</strong> (Insert your prompt or sentence for "answer" here)</p>
+    <input type="text" id="word-3" placeholder="Type the word you heard...">
+    <div id="result-3" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 5:</strong> (Insert your prompt or sentence for "arrive" here)</p>
+    <input type="text" id="word-4" placeholder="Type the word you heard...">
+    <div id="result-4" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 6:</strong> (Insert your prompt or sentence for "breath" here)</p>
+    <input type="text" id="word-5" placeholder="Type the word you heard...">
+    <div id="result-5" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 7:</strong> (Insert your prompt or sentence for "breathe" here)</p>
+    <input type="text" id="word-6" placeholder="Type the word you heard...">
+    <div id="result-6" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 8:</strong> (Insert your prompt or sentence for "business" here)</p>
+    <input type="text" id="word-7" placeholder="Type the word you heard...">
+    <div id="result-7" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 9:</strong> (Insert your prompt or sentence for "calendar" here)</p>
+    <input type="text" id="word-8" placeholder="Type the word you heard...">
+    <div id="result-8" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 10:</strong> (Insert your prompt or sentence for "centre" here)</p>
+    <input type="text" id="word-9" placeholder="Type the word you heard...">
+    <div id="result-9" class="result"></div>
+  </div>
+
+  <button onclick="checkAnswers()">Check My Answers</button>
+
+  <script>
+    const words = [
+      'accident',
+      'accidentally',
+      'actually',
+      'answer',
+      'arrive',
+      'breath',
+      'breathe',
+      'business',
+      'calendar',
+      'centre'
+    ];
+
+    function checkAnswers() {
+      words.forEach((word, index) => {
+        const input = document.getElementById(`word-${index}`).value.trim().toLowerCase();
+        const result = document.getElementById(`result-${index}`);
+        if (input === word) {
+          result.innerHTML = '✅ Correct!';
+          result.style.color = 'green';
+        } else {
+          result.innerHTML = `❌ Oops! The correct spelling is "${word}".`;
+          result.style.color = 'red';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
