@@ -45,6 +45,12 @@
       font-weight: bold;
       margin-top: 15px;
     }
+    #score {
+      font-size: 18px;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -94,24 +100,25 @@
   </div>
 
   <div class="word-box">
-    <p><strong>Word 9:</strong> (Steve is very ---t------ on how he sits on the pig. )</p>
+    <p><strong>Word 8:</strong> (Steve is very ---t------ on how he sits on the pig. )</p>
     <input type="text" id="word-8" placeholder="Type the word you heard...">
+    <div id="result-7" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 9:</strong> (This is a p------- bunch of animals.)</p>
+    <input type="text" id="word-9" placeholder="Type the word you heard...">
     <div id="result-8" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 10:</strong> (This is a p------- bunch of animals.)</p>
-    <input type="text" id="word-9" placeholder="Type the word you heard...">
+    <p><strong>Word 10:</strong> (Steve and Alex checked their ---e----.)</p>
+    <input type="text" id="word-7" placeholder="Type the word you heard...">
     <div id="result-9" class="result"></div>
   </div>
 
-  <div class="word-box">
-    <p><strong>Word 8:</strong> (Steve and Alex checked their ---e----)</p>
-    <input type="text" id="word-7" placeholder="Type the word you heard...">
-    <div id="result-7" class="result"></div>
-  </div>
-
   <button onclick="checkAnswers()">Check My Answers</button>
+  <div id="score"></div>
 
   <script>
     const words = [
