@@ -150,11 +150,7 @@
         }
       });
 
-      let message = `You got ${correctCount} out of ${words.length} correct! 📝`;
-      if (correctCount > 7) {
-        message += '<br><span style="color: #d2691e; font-size: 20px;">🌟 You're a superstar! 🌟</span>';
-      }
-      document.getElementById('score').innerHTML = message;
+      document.getElementById('score').innerHTML = `You got ${correctCount} out of ${words.length} correct! 📝`;
     }
   </script>
 </body>
