@@ -52,63 +52,63 @@
   <p>Type each word as you hear it in the video!</p>
 
   <div class="word-box">
-    <p><strong>Word 1:</strong> (The mincart rolled over the sheep by a------- .)</p>
+    <p><strong>Word 1:</strong> (The mincart rolled over the sheep by a-------.)</p>
     <input type="text" id="word-0" placeholder="Type the word you heard...">
     <div id="result-0" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 2:</strong> (The parrot --c-------- bumped into the tree .)</p>
+    <p><strong>Word 2:</strong> (The parrot --c-------- bumped into the tree.)</p>
     <input type="text" id="word-1" placeholder="Type the word you heard...">
     <div id="result-1" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 3:</strong> (Steve found the -n---- .)</p>
+    <p><strong>Word 3:</strong> (Steve found the -n----.)</p>
     <input type="text" id="word-2" placeholder="Type the word you heard...">
     <div id="result-2" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 4:</strong> (The zombies were happy to a----- at the farm .)</p>
+    <p><strong>Word 4:</strong> (The zombies were happy to a----- at the farm.)</p>
     <input type="text" id="word-3" placeholder="Type the word you heard...">
     <div id="result-3" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 5:</strong> (This is serious ---i---- .)</p>
+    <p><strong>Word 5:</strong> (This is serious ---i----.)</p>
     <input type="text" id="word-4" placeholder="Type the word you heard...">
     <div id="result-4" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 6:</strong> (Steve will -----u-- down the track .)</p>
+    <p><strong>Word 6:</strong> (Steve will -----u-- down the track.)</p>
     <input type="text" id="word-5" placeholder="Type the word you heard...">
     <div id="result-5" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 7:</strong> (The train arrived at the --g---- time .)</p>
+    <p><strong>Word 7:</strong> (The train arrived at the --g---- time.)</p>
     <input type="text" id="word-6" placeholder="Type the word you heard...">
     <div id="result-6" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 8:</strong> (Insert your prompt or sentence for "business" here)</p>
-    <input type="text" id="word-7" placeholder="Type the word you heard...">
-    <div id="result-7" class="result"></div>
-  </div>
-
-  <div class="word-box">
-    <p><strong>Word 9:</strong> (Steve is very ---t------ on how he sits on the pig . )</p>
+    <p><strong>Word 9:</strong> (Steve is very ---t------ on how he sits on the pig. )</p>
     <input type="text" id="word-8" placeholder="Type the word you heard...">
     <div id="result-8" class="result"></div>
   </div>
 
   <div class="word-box">
-    <p><strong>Word 10:</strong> (Insert your prompt or sentence for "centre" here)</p>
+    <p><strong>Word 10:</strong> (This is a p------- bunch of animals.)</p>
     <input type="text" id="word-9" placeholder="Type the word you heard...">
     <div id="result-9" class="result"></div>
+  </div>
+
+  <div class="word-box">
+    <p><strong>Word 8:</strong> (Steve and Alex checked their ---e----)</p>
+    <input type="text" id="word-7" placeholder="Type the word you heard...">
+    <div id="result-7" class="result"></div>
   </div>
 
   <button onclick="checkAnswers()">Check My Answers</button>
@@ -121,24 +121,29 @@
       'arrive',
       'business',
       'continue',
-      'regular',
-      'xxxx',
+      'regular',     
       'particular',
-      'peculiar'
+      'peculiar',
+      'calendar'
     ];
 
     function checkAnswers() {
+      let correctCount = 0;
+
       words.forEach((word, index) => {
         const input = document.getElementById(`word-${index}`).value.trim().toLowerCase();
         const result = document.getElementById(`result-${index}`);
         if (input === word) {
           result.innerHTML = '✅ Correct!';
           result.style.color = 'green';
+          correctCount++;
         } else {
           result.innerHTML = `❌ Oops! The correct spelling is "${word}".`;
           result.style.color = 'red';
         }
       });
+
+      document.getElementById('score').innerHTML = `You got ${correctCount} out of ${words.length} correct! 📝`;
     }
   </script>
 </body>
